@@ -48,3 +48,12 @@
     padding:$pTopBottom $pLeftRight;
     color: $color;
 }
+@mixin button2($bgColor:white ,$bRadius:50px,$color:'black',$width:'120px',$fSize:.8rem){
+    @include flex();
+    background-color: $bgColor;
+    border-radius: $bRadius;
+    color: $color;
+    width: $width;
+    font-size: $fSize;
+    padding:.3rem;
+}

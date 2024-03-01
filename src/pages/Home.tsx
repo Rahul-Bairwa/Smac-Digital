@@ -7,6 +7,7 @@ import { PiRocket } from "react-icons/pi";
 import { TbWorldWww } from "react-icons/tb";
 import { TbHeartShare } from "react-icons/tb";
 import { IconType } from "react-icons"
+import Services from "../components/Services"
 const Home = () => {
     const featuresComponents: { title: string, desc: string, icons: IconType }[] = [
         {
@@ -31,6 +32,7 @@ const Home = () => {
         },
 
     ];
+
     return (
         <>
             <section className="home-section">
@@ -58,11 +60,11 @@ const Home = () => {
                         </div>
                         <div className="feature-section-card">
                             {
-                                featuresComponents.map((e)=>{
-                                    return(
+                                featuresComponents.map((e) => {
+                                    return (
                                         <div className="feature-card">
                                             <div></div>
-                                            <e.icons/>
+                                            <e.icons />
                                             <h3>{e.title}</h3>
                                             <p>{e.desc}</p>
                                         </div>
@@ -70,6 +72,15 @@ const Home = () => {
                                 })
                             }
                         </div>
+                    </div>
+                </div>
+                <div className="services-section">
+                    <div className="services-top-section">
+                        <div>Our Services</div>
+                        <h1>Performance Driven Digital Marketing Services</h1>
+                    </div>
+                    <div className="service-card-container">
+                        <Services />
                     </div>
                 </div>
                 <div className="whatsapp-sticky-div">

@@ -144,10 +144,8 @@ nav {
 
 
                 >.digital-marketing-agency {
+                    @include button2(#66AEFF, 50px, #002176, 180px);
                     @include heading(0px, 100, normal);
-                    font-size: .75rem;
-                    width: 180px;
-                    @include button(#66AEFF, 50px, .2rem, .2rem, #002176);
                 }
 
                 >h1 {
@@ -197,13 +195,10 @@ nav {
                 padding: .8rem;
 
                 >h4 {
+                    @include button2(#ffffff, 50px, #ffffff, 120px);
                     background: linear-gradient(to right, #7926fe 0, #c95ae4 100%);
-                    @include heading(0px, 100, normal);
-                    font-size: .75rem;
-                    width: 120px;
-                    @include button(#66AEFF, 20px, .2rem, 0rem, #ffffff);
+                    font-weight: 400;
                 }
-
 
                 >h1 {
                     padding: 1.5rem 0 3.1rem;
@@ -232,8 +227,8 @@ nav {
                         border-radius: 50%;
                         background-color: #F5E4F9;
                         position: absolute;
-                        top:2rem;
-                        left:6rem;
+                        top: 2rem;
+                        left: 6rem;
                     }
 
                     >svg {
@@ -241,17 +236,20 @@ nav {
                         font-size: 3rem;
                         z-index: 3;
                     }
-                    >h3{
+
+                    >h3 {
                         @extend .overpass;
                         color: #3a3a3a;
                         font-weight: 800;
                     }
-                    >p{
+
+                    >p {
                         color: #4d6195;
                     }
 
                 }
-                >.feature-card:nth-child(even){
+
+                >.feature-card:nth-child(even) {
                     position: relative;
                     top: 2rem;
                 }
@@ -259,9 +257,73 @@ nav {
 
         }
     }
+
+
+    // Services Section
+
+    .services-section {
+        background-color: #f5fbfe;
+        width: 100%;
+        @include flex(column);
+        padding: 6rem 0;
+
+        >.services-top-section {
+            @include flex(column);
+
+            >div {
+                @include button2(#ffdb4c, 50px, #002176, 120px)
+            }
+
+            >h1 {
+                @include heading(1px, 800, normal);
+                font-size: 2.2rem;
+                @extend .overpass;
+                color: #BA1128;
+            }
+        }
+
+        >.service-card-container {
+            width: 77.5%;
+            @include grid(4fr 4fr 4fr, unset, 3rem);
+
+            >.service-card {
+                >.img-div {
+                    @include square(100px);
+                    border: 1px dashed black;
+                    border-radius: 50%;
+                    @include flex();
+
+                    >img {
+                        width: 70%;
+                    }
+                }
+
+                >h1 {
+                    @extend .overpass;
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #002176;
+                    padding: 1rem 0;
+                }
+
+                >h1:hover {
+                    color: #BA1128;
+                    cursor: pointer;
+                }
+
+                >a {
+                    color: #2AD89F;
+                    font-size: .9rem;
+                    font-weight: 600;
+                }
+
+                >a:hover {
+                    color: #33475b;
+                }
+            }
+        }
+    }
 }
-
-
 
 //what whatsapp sticky button
 .whatsapp-sticky-div {
