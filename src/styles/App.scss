@@ -1,4 +1,5 @@
 @import './mixin.scss';
+
 .overpass {
     font-family: "Overpass", sans-serif;
     font-optical-sizing: auto;
@@ -31,7 +32,7 @@ nav {
     @include flex();
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 29;
 
     >.nav-section {
         width: 77.5%;
@@ -158,7 +159,7 @@ nav {
                 }
 
                 >p {
-                line-height: 3rem;
+                    line-height: 3rem;
 
                     color: #d8def2;
 
@@ -183,18 +184,18 @@ nav {
 
     //features section
     >.features-section {
-        background-color: whitesmoke;
+        background-color: #ffffff;
         width: 100%;
         @include flex();
         padding: 7rem 0;
 
         >.features-section-inner-div {
-            border: 1px solid black;
             width: 77.5%;
             @include grid(6fr 6fr);
 
             >.seo-container {
                 padding: .8rem;
+
                 >h4 {
                     background: linear-gradient(to right, #7926fe 0, #c95ae4 100%);
                     @include heading(0px, 100, normal);
@@ -204,7 +205,7 @@ nav {
                 }
 
 
-                >h1{
+                >h1 {
                     padding: 1.5rem 0 3.1rem;
                     @extend .overpass;
                     color: #BA1128;
@@ -212,6 +213,47 @@ nav {
                     line-height: 3rem;
                     font-size: 2.2rem;
                     font-style: "Overpass", sans-serif;
+                }
+            }
+
+            >.feature-section-card {
+                padding: .8rem;
+                @include grid(6fr 6fr, unset, 1.9rem);
+
+                >.feature-card {
+                    @include flex(column);
+                    text-align: center;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+                    position: relative;
+                    padding: 1.5rem 1.30rem;
+
+                    >div {
+                        @include square(2rem);
+                        border-radius: 50%;
+                        background-color: #F5E4F9;
+                        position: absolute;
+                        top:2rem;
+                        left:6rem;
+                    }
+
+                    >svg {
+                        color: #a44ef4;
+                        font-size: 3rem;
+                        z-index: 3;
+                    }
+                    >h3{
+                        @extend .overpass;
+                        color: #3a3a3a;
+                        font-weight: 800;
+                    }
+                    >p{
+                        color: #4d6195;
+                    }
+
+                }
+                >.feature-card:nth-child(even){
+                    position: relative;
+                    top: 2rem;
                 }
             }
 

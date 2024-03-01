@@ -8,7 +8,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { TbHeartShare } from "react-icons/tb";
 import { IconType } from "react-icons"
 const Home = () => {
-    const dashboardComponents: { title: string, desc: string, icons: IconType }[] = [
+    const featuresComponents: { title: string, desc: string, icons: IconType }[] = [
         {
             title: "New-age Digital Marketing Approach",
             desc: "We follow the new age digital marketing approach by driving positive Return On Investment from your marketing expense.",
@@ -57,14 +57,24 @@ const Home = () => {
                             <img src={seoPng} alt="" />
                         </div>
                         <div className="feature-section-card">
-                            card
+                            {
+                                featuresComponents.map((e)=>{
+                                    return(
+                                        <div className="feature-card">
+                                            <div></div>
+                                            <e.icons/>
+                                            <h3>{e.title}</h3>
+                                            <p>{e.desc}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>
                 <div className="whatsapp-sticky-div">
                     <button className="whatsapp-sticky-button"><SiWhatsapp /></button>
                 </div>
-                <div className="go-to-up-button"></div>
             </section>
         </>
     )
