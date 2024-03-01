@@ -1,0 +1,238 @@
+@import './mixin.scss';
+.overpass {
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+}
+
+:root {
+    font-family: Poppins, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top-section {
+    background: linear-gradient(to right, #d40420 0, #420202 100%);
+    height: 190vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+//navbar css started
+nav {
+    @include flex();
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    >.nav-section {
+        width: 77.5%;
+        height: 120px;
+        background-color: transparent;
+        @include flex(row, space-between);
+        color: #ffffff;
+        font-size: .90rem;
+        @include heading(0px, 600, capitalized);
+
+        >li {
+            list-style: none;
+        }
+
+        >button {
+            @include button(#ffffff, 5px, .5rem, .5rem);
+            font-size: .95rem;
+            font-family: Poppins, sans-serif;
+            @include heading(1px, 700, capitalized)
+        }
+    }
+}
+
+.active-nav {
+    background-color: #000000;
+    height: 82px;
+    transition: all .1s ease-in-out;
+}
+
+
+
+//home page start
+.home-section {
+    @include flex(column);
+
+    >.intro-section {
+        height: 720px;
+        @include grid(8fr 4fr);
+        width: 77.5%;
+
+        .form-section {
+            position: relative;
+
+            >.callback-form {
+                position: absolute;
+                margin-left: 1rem;
+                padding: 1.5rem;
+                background-color: #ffffff;
+                border-radius: 10px;
+                @include flex(column, center, left);
+
+                >div {
+                    font-size: .9rem;
+                    width: 100%;
+                    @include flex(column, left, left);
+
+                    >label {
+                        @include heading(0px, 300, normal);
+                        font-family: arial, helvetica, sans-serif;
+                        color: #33475b;
+                    }
+
+                    >input {
+                        @include inputStyle(100%, 1rem, #f5f8fa, 1px solid #cbd6e2);
+                        border-radius: 3px;
+                        height: 40px;
+                    }
+
+                    >a {
+                        @include flex(row, top, top);
+                        @include heading(0px, 600, normal);
+                        font-size: .8rem;
+                        word-spacing: 2px;
+
+                        >svg {
+                            font-size: 2.5rem;
+                            color: #ff7a59;
+                        }
+
+                        >p {
+                            color: #33475b;
+
+                            >span {
+                                color: #ff7a59;
+                                text-decoration: underline;
+                                line-height: 2rem;
+                            }
+                        }
+                    }
+                }
+
+                >button {
+                    @include button(#ff7a59, 3px, .7rem, 1rem, white);
+                    @include heading(0, 600, normal);
+                    width: 55%;
+                    margin: 1.2rem 0;
+                }
+            }
+        }
+
+        >.intro-left {
+            @include flex(row, left, center);
+
+            >div {
+                @include flex(column, space-between, left);
+                height: 490;
+                position: relative;
+                top: -5rem;
+
+
+                >.digital-marketing-agency {
+                    @include heading(0px, 100, normal);
+                    font-size: .75rem;
+                    width: 180px;
+                    @include button(#66AEFF, 50px, .2rem, .2rem, #002176);
+                }
+
+                >h1 {
+                    color: #ffffff;
+                    @extend .overpass;
+                    @include heading(0, 700, normal);
+                    font-size: 3rem;
+                    line-height: 3.5rem;
+                }
+
+                >p {
+                line-height: 3rem;
+
+                    color: #d8def2;
+
+                }
+
+                >button {
+                    @include button(#000000, 50px, .3rem, .3rem, #ffffff);
+                    font-size: 14px;
+                    width: 40%;
+
+                    >span {
+                        position: relative;
+                        right: 1rem;
+                        @include button(#ffffff, 50%, 1rem, 1rem, #000000);
+                        font-size: .8rem;
+
+                    }
+                }
+            }
+        }
+    }
+
+    //features section
+    >.features-section {
+        background-color: whitesmoke;
+        width: 100%;
+        @include flex();
+        padding: 7rem 0;
+
+        >.features-section-inner-div {
+            border: 1px solid black;
+            width: 77.5%;
+            @include grid(6fr 6fr);
+
+            >.seo-container {
+                padding: .8rem;
+                >h4 {
+                    background: linear-gradient(to right, #7926fe 0, #c95ae4 100%);
+                    @include heading(0px, 100, normal);
+                    font-size: .75rem;
+                    width: 120px;
+                    @include button(#66AEFF, 20px, .2rem, 0rem, #ffffff);
+                }
+
+
+                >h1{
+                    padding: 1.5rem 0 3.1rem;
+                    @extend .overpass;
+                    color: #BA1128;
+                    font-weight: 800;
+                    line-height: 3rem;
+                    font-size: 2.2rem;
+                    font-style: "Overpass", sans-serif;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+//what whatsapp sticky button
+.whatsapp-sticky-div {
+    position: sticky;
+    bottom: 5px;
+    left: 90%;
+    width: 100px;
+    @include button(#df9faf, 50px, .6rem);
+
+    >.whatsapp-sticky-button {
+        @include button(#2AB13F, 50px, 0, 0);
+        color: #ffffff;
+        font-size: 2.5rem;
+        z-index: 20;
+    }
+}
