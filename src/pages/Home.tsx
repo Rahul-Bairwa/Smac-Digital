@@ -11,10 +11,8 @@ import Services from "../components/Services"
 import message from '../assets/message.png'
 import message2 from '../assets/message-2.png'
 import Project from "../components/Project"
-import project1 from '../assets/project1.jpg'
-import project2 from '../assets/project2.jpg'
-import project3 from '../assets/project3.jpg'
-
+import { projects, blogs } from '../data.ts'
+import background from '../assets/background.jpg'
 const Home = () => {
     const featuresComponents: { title: string, desc: string, icons: IconType }[] = [
         {
@@ -39,11 +37,7 @@ const Home = () => {
         },
 
     ];
-    const projects: { title: string, img: string }[] = [
-        { title: 'Stone Hub India', img: project1 },
-        { title: 'Intex Technologies', img: project2 },
-        { title: 'OohMexicano', img: project3 }
-    ]
+
     return (
         <>
             <div className="home-section">
@@ -113,17 +107,42 @@ const Home = () => {
                     <span>Our Portfolio</span>
                     <h1>Creative Works Which Converted <br />
                         Startup Into A Brand!
-                        </h1>
+                    </h1>
                     <div className="projects-container">
                         {
-                            projects.map((e)=>{
-                                return(
-                                    <Project e={e}/>
+                            projects.map((e) => {
+                                return (
+                                    <Project e={e} />
                                 )
                             })
                         }
                     </div>
                     <button><span><FaArrowRight /></span>Other Projects</button>
+                </section>
+                <section className="story-section">
+                    <img width={'100%'} src={background} alt="" />
+                </section>
+                <section className="blog-section">
+                    <span>Blog Post</span>
+                    <h1>Stay Updated With Digital Marketing News Which Could <br />
+                        Drive Your Growth In The Future
+                    </h1>
+                    <div className="blog-container">
+                        {
+                            blogs.map((e) => {
+                                return (
+                                    <div className="blog-card">
+                                        <img src={e.img} />
+                                        <div className="description">
+                                            <h1>{e.title}</h1>
+                                            <p>{e.desc}</p>
+                                            <h3>{e.date}</h3>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </section>
                 <div className="whatsapp-sticky-div">
                     <button className="whatsapp-sticky-button"><SiWhatsapp /></button>
