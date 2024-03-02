@@ -8,6 +8,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { TbHeartShare } from "react-icons/tb";
 import { IconType } from "react-icons"
 import Services from "../components/Services"
+import message from '../assets/message.png'
 const Home = () => {
     const featuresComponents: { title: string, desc: string, icons: IconType }[] = [
         {
@@ -35,8 +36,8 @@ const Home = () => {
 
     return (
         <>
-            <section className="home-section">
-                <div className="intro-section">
+            <div className="home-section">
+                <section className="intro-section">
                     <div className="intro-left">
                         <div>
                             <div className="digital-marketing-agency">Digital Marketing Agency</div>
@@ -48,8 +49,8 @@ const Home = () => {
                         </div>
                     </div>
                     <CallbackForm />
-                </div>
-                <div className="features-section">
+                </section>
+                <section className="features-section">
                     <div className="features-section-inner-div">
                         <div className="seo-container">
                             <h4>Our Features</h4>
@@ -73,8 +74,8 @@ const Home = () => {
                             }
                         </div>
                     </div>
-                </div>
-                <div className="services-section">
+                </section>
+                <section className="services-section">
                     <div className="services-top-section">
                         <div>Our Services</div>
                         <h1>Performance Driven Digital Marketing Services</h1>
@@ -82,11 +83,26 @@ const Home = () => {
                     <div className="service-card-container">
                         <Services />
                     </div>
-                </div>
+                </section>
+                <section className="suggestion-section">
+                    <img src={message} alt="" />
+                    <div>Our Digital Marketing Service Features</div>
+                    <h1>Don't Forget To Get Expert Suggestion <br />
+                        On Your Digital Assets
+                    </h1>
+                    <p>Please enter valid website, email address or phone number.</p>
+                    <form className="suggestion-form">
+                        <input type="text" placeholder="http://website here" />
+                        <input type="text" placeholder="Email" />
+                        <input type="text" placeholder="Phone Number" name="" />
+                        <button type="button"><span><FaArrowRight /></span>Analyze Your Site</button>
+                    </form>
+                </section>
+                
                 <div className="whatsapp-sticky-div">
                     <button className="whatsapp-sticky-button"><SiWhatsapp /></button>
                 </div>
-            </section>
+            </div>
         </>
     )
 }

@@ -19,7 +19,7 @@
 
 .top-section {
     background: linear-gradient(to right, #d40420 0, #420202 100%);
-    height: 190vh;
+    height: 110vh;
 }
 
 a {
@@ -67,6 +67,7 @@ nav {
 //home page start
 .home-section {
     @include flex(column);
+    margin: 0;
 
     >.intro-section {
         height: 720px;
@@ -323,7 +324,86 @@ nav {
             }
         }
     }
-}
+
+    //Suggestion Section
+    >.suggestion-section {
+        width: 100%;
+        background-color: #d2214d;
+        text-align: center;
+        @include flex(column);
+        position: relative;
+        padding: 7rem 0;
+
+
+        >img {
+            position: absolute;
+            left: 4rem;
+            top: 4.5rem;
+        }
+
+        >div {
+            @include button2(#66aeff, 50px, #002176);
+            padding: .3rem 1.5rem;
+        }
+
+        >h1 {
+            @extend .overpass;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: #ffffff;
+            padding-bottom: 2.5rem;
+        }
+
+        >p {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        >.suggestion-form {
+            gap: 2rem;
+            width: 60%;
+            @include flex(row, space-between);
+
+            >input {
+                transition: all 1s ease-out;
+                @include inputStyle(100%, 1rem, inherit, 1px solid #ffffff4d);
+                border-radius: 50px;
+                padding: 1.3rem 1.5rem;
+            }
+
+            >input:focus {
+                outline: 1px solid #ffffff;
+            }
+
+            >input::placeholder {
+                color: #ffffff;
+                font-weight: 500;
+                font-size: 1rem;
+                font-family: Poppins, sans-serif;
+            }
+
+            >button {
+                @include button(#000000, 50px, .5rem, 1.2rem, #ffffff);
+                font-size: 14px;
+                width: 100%;
+                
+                >span {
+                    position: relative;
+                    right: .75rem;
+                    @include button(#ffffff, 50%, 1rem, 1rem, #000000);
+                    font-size: .8rem;
+
+                }
+            }
+            >button:hover{
+                transition: all .3s ease-out;
+                background-color: #b91128;
+            }
+        }
+    }
+} 
+
+
 
 //what whatsapp sticky button
 .whatsapp-sticky-div {
