@@ -9,6 +9,12 @@ import { TbHeartShare } from "react-icons/tb";
 import { IconType } from "react-icons"
 import Services from "../components/Services"
 import message from '../assets/message.png'
+import message2 from '../assets/message-2.png'
+import Project from "../components/Project"
+import project1 from '../assets/project1.jpg'
+import project2 from '../assets/project2.jpg'
+import project3 from '../assets/project3.jpg'
+
 const Home = () => {
     const featuresComponents: { title: string, desc: string, icons: IconType }[] = [
         {
@@ -33,7 +39,11 @@ const Home = () => {
         },
 
     ];
-
+    const projects: { title: string, img: string }[] = [
+        { title: 'Stone Hub India', img: project1 },
+        { title: 'Intex Technologies', img: project2 },
+        { title: 'OohMexicano', img: project3 }
+    ]
     return (
         <>
             <div className="home-section">
@@ -95,10 +105,26 @@ const Home = () => {
                         <input type="text" placeholder="http://website here" />
                         <input type="text" placeholder="Email" />
                         <input type="text" placeholder="Phone Number" name="" />
-                        <button type="button"><span><FaArrowRight /></span>Analyze Your Site</button>
+                        <button><span><FaArrowRight /></span>Analyze Your Site</button>
                     </form>
                 </section>
-                
+                <section className="projects-section">
+                    <img src={message2} alt="Message Image" />
+                    <span>Our Portfolio</span>
+                    <h1>Creative Works Which Converted <br />
+                        Startup Into A Brand!
+                        </h1>
+                    <div className="projects-container">
+                        {
+                            projects.map((e)=>{
+                                return(
+                                    <Project e={e}/>
+                                )
+                            })
+                        }
+                    </div>
+                    <button><span><FaArrowRight /></span>Other Projects</button>
+                </section>
                 <div className="whatsapp-sticky-div">
                     <button className="whatsapp-sticky-button"><SiWhatsapp /></button>
                 </div>
