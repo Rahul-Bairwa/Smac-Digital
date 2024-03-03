@@ -4,10 +4,11 @@ function App() {
 
   return (
     <div className='top-section'>
-      <Navbar/>
-      <Home/>
+      <Navbar />
+      <Home />
+      
     </div>
-    
+
   )
 }
 
