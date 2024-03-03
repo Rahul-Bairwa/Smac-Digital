@@ -11,8 +11,9 @@ import Services from "../components/Services"
 import message from '../assets/message.png'
 import message2 from '../assets/message-2.png'
 import Project from "../components/Project"
-import { projects, blogs } from '../data.ts'
+import { projects, blogs, brands } from '../data.ts'
 import background from '../assets/background.jpg'
+import makeacall from '../assets/makecallbg.png'
 const Home = () => {
     const featuresComponents: { title: string, desc: string, icons: IconType }[] = [
         {
@@ -37,7 +38,6 @@ const Home = () => {
         },
 
     ];
-
     return (
         <>
             <div className="home-section">
@@ -142,6 +142,25 @@ const Home = () => {
                                 )
                             })
                         }
+                    </div>
+                </section>
+                <section className="brand-section">
+                    <h1>Brands that have trusted us</h1>
+                    <div className="brands-container">
+                        {
+                            brands.map((e) => {
+                                return <img src={e} alt="" />
+                            })
+                        }
+                    </div>
+                    <div className="make-a-call-section">
+                        <img src={makeacall} alt="make a call bg" />    
+                        <div>
+                            <h1>We work with you to improve your <span>business's</span> bottom line and generate <br />
+                                positive ROI so that you can scale it up.
+                            </h1>
+                            <a href="tel:+91 9079610936"><button>Make A Call Now</button></a>
+                        </div>
                     </div>
                 </section>
                 <div className="whatsapp-sticky-div">

@@ -476,7 +476,7 @@ nav {
         width: 100%;
         text-align: center;
         @include flex(column);
-
+        padding: 5rem 0;
         >span {
             @include button2(#0060ff, 50px, #ffffff);
             width: fit-content;
@@ -548,6 +548,71 @@ nav {
                     h3{
                         color: #00e49a;
                         font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    //Brand Section
+
+    >.brand-section{
+        width: 100%;
+        @include flex(column);
+        >h1{
+            @extend .overpass;
+            font-size: 2.5rem;
+        }
+        >.brands-container{
+            width: 77.5%;
+            padding: 2rem 0 4rem;
+            @include flex();
+            flex-wrap: wrap;
+            >img{
+                width: 16%;
+                margin: 1rem;
+            }
+            >img:nth-child(2),img:nth-child(16), img:nth-child(11){
+                width: 9%;
+            }
+            >img:nth-child(6){
+                width: 7%;
+            }
+        }
+        >.make-a-call-section{
+            @include flex();
+            position: relative;
+            >div{
+                @include flex();
+                position: absolute;
+                width: 77.5%;
+                >h1{
+                    width: 70%;
+                    line-height: 2.6rem;
+                    color: #0B2460;
+                    font-size: 2.25rem;
+                    @extend .overpass;
+                    font-weight: 800;
+                    >span{
+                        color: #9A1018;
+                    }
+                }
+                >a{
+                    width: 30%;
+                    @include flex(row,end);
+                    position: relative;
+                    top: -1rem;
+                    >button{
+                        @extend .button;
+                        padding: 1rem 2rem;
+                        background: linear-gradient(to right, #9f0f19 0, #7e1416 100%);
+                        width: fit-content;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        @extend .overpass;
+                    }
+                    >button:hover{
+                        background:linear-gradient(to bottom, #3ba1f7 0, #084df9 100%);
                     }
                 }
             }
