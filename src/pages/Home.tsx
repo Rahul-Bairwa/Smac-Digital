@@ -1,6 +1,5 @@
 import { FaArrowRight, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 import seoPng from '../assets/seo.png'
-import { SiWhatsapp } from "react-icons/si"
 import Services from "../components/Services"
 import message from '../assets/message.png'
 import message2 from '../assets/message-2.png'
@@ -215,11 +214,7 @@ const Home = () => {
                     </section>
                     <p style={{ fontSize: ".9rem" }}>Copyright 2023, All Right Reserved SMAC Digital</p>
                 </footer>
-                <div className="whatsapp-sticky-div">
-                    <a href="https://wa.me/message/FIXBPM3JZUSQJ1" className="whatsapp-sticky-button"><SiWhatsapp /></a>
-                </div>
             </div>
-
         </>
     )
 }

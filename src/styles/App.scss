@@ -20,6 +20,7 @@
 .top-section {
     background: linear-gradient(to right, #d40420 0, #420202 100%);
     position: relative;
+    min-height: 100vh;
 }
 
 a {
@@ -62,9 +63,10 @@ nav {
         font-size: .90rem;
         @include heading(0px, 600, capitalized);
 
-        >li {
+        >a {
             list-style: none;
             cursor: pointer;
+            color: #fff;
         }
 
         >button {
@@ -789,13 +791,13 @@ nav {
                 @include flex(row, center, start);
 
                 >img {
-                    width: 100px;
+                    width:30%;
                     border-radius: 50%;
                 }
 
                 div {
                     color: #fff;
-                    font-size: .9rem;
+                    font-size: .9em;
 
                     >h1 {
                         @extend .overpass;
@@ -831,6 +833,15 @@ nav {
         font-size: 1rem;
         color: #212519;
     }
+}
+
+
+//About Us Page
+.about-page{
+    color: #fff;
+    font-size: 2rem;
+    @include flex();
+    height: 70vh;
 }
 
 //what whatsapp sticky button

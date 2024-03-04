@@ -3,9 +3,10 @@ import logo from '../assets/logo_2.png'
 import { AiFillCaretDown } from 'react-icons/ai';
 import { useRef, useState } from 'react';
 import { navItems, heads } from '../data'
+import { Link } from 'react-router-dom';
 const Navbar = () => {
-    const popUpVisibility = useRef();
-    const buttonBg = useRef();
+    const popUpVisibility = useRef<HTMLDivElement>();
+    const buttonBg = useRef<HTMLButtonElement>(null);
     const [navBgColor, setNavBgColor] = useState(false)
     const changeBgColor = () => {
         if (window.scrollY >= 7) {
@@ -16,29 +17,42 @@ const Navbar = () => {
         }
     }
     window.addEventListener('scroll', changeBgColor)
+
     const showPopUp = () => {
-        
-        if (popUpVisibility.current.style.display === "block"   || buttonBg.current.style.backgroundColor==='#red') {
-            popUpVisibility.current.style.display = "none"
-            buttonBg.current.style.backgroundColor="#004500"
-            setTimeout(()=>{
-                buttonBg.current.style.backgroundColor="#ffffff"
-            },100)
+        if ((popUpVisibility.current?.style.display === "block" || buttonBg.current?.style.backgroundColor === '#red')) {
+            if (popUpVisibility.current) {
+                popUpVisibility.current.style.display = "none";
+            }
+            if (buttonBg.current) {
+                buttonBg.current.style.backgroundColor = "#004500";
+                setTimeout(() => {
+                    if (buttonBg.current) {
+                        buttonBg.current.style.backgroundColor = "#ffffff";
+                    }
+                }, 100);
+            }
         } else {
-            popUpVisibility.current.style.display = "block"
-            buttonBg.current.style.backgroundColor="#004500"
-            setTimeout(()=>{
-                buttonBg.current.style.backgroundColor="#ffffff"
-            },100)
+            if (popUpVisibility.current) {
+                popUpVisibility.current.style.display = "block";
+            }
+            if (buttonBg.current) {
+                buttonBg.current.style.backgroundColor = "#004500";
+                setTimeout(() => {
+                    if (buttonBg.current) {
+                        buttonBg.current.style.backgroundColor = "#ffffff";
+                    }
+                }, 100);
+            }
         }
-    }
+    };
+
     return (
         <>
             <nav className={navBgColor ? 'active-nav' : ''}>
                 <div className="nav-section" >
                     <img src={logo} alt="" />
                     {
-                        navItems.map(e => <li >{e}</li>)
+                        navItems.map(e => <Link to={`/${e.toLowerCase()}`}>{e}</Link>)
                     }
                     <button ref={buttonBg} onClick={showPopUp}><FaPhoneVolume /><span>Let's Talk!</span><AiFillCaretDown />
                     </button>
