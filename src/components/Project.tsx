@@ -1,6 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 
-const Project: React.FC = ({ e }) => {
+interface ProjectProps {
+    e: {
+        title: string;
+        img: string;
+    };
+}
+
+const Project: React.FC<ProjectProps> = ({ e }) => {
     const titlePopup = useRef<HTMLDivElement>(null);
 
     const upTitle = () => {
@@ -14,6 +21,7 @@ const Project: React.FC = ({ e }) => {
             titlePopup.current.classList.remove('animate'); // Remove the CSS class to reset animation
         }
     };
+
     return (
         <>
             <div className='project-card' onMouseEnter={upTitle} onMouseLeave={resetAnimation}>
@@ -21,7 +29,7 @@ const Project: React.FC = ({ e }) => {
                 <div ref={titlePopup}>{e.title}</div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Project
+export default Project;

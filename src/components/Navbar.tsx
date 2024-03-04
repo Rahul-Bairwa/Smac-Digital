@@ -4,8 +4,8 @@ import { AiFillCaretDown } from 'react-icons/ai';
 import { useRef, useState } from 'react';
 import { navItems, heads } from '../data'
 import { Link } from 'react-router-dom';
-const Navbar = () => {
-    const popUpVisibility = useRef<HTMLDivElement>();
+const Navbar: React.FC = () => {
+    const popUpVisibility = useRef<HTMLDivElement>(null);
     const buttonBg = useRef<HTMLButtonElement>(null);
     const [navBgColor, setNavBgColor] = useState(false)
     const changeBgColor = () => {
