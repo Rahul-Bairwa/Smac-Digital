@@ -56,7 +56,7 @@ const CallbackForm = () => {
                     },
                     body: JSON.stringify(userData)
                 });
-                const data1 = await res.json();
+                await res.json();
                 setUserData({"name": "","mobile": "","email": ""})
                 alert(`Your Request Successfully Submited`)
                 if(formVisibility.current){
