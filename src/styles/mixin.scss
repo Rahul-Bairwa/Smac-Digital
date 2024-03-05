@@ -28,13 +28,6 @@
     outline: none;
 }
 
-@mixin posCenter(){
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
 @mixin square($s:1rem){
     width: $s;
     height: $s;
